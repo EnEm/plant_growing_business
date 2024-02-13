@@ -10,5 +10,8 @@ abstract class SegmentNode : NodeInterface
 
     //  ID for the segment node
     int id;
+
     int id2;
+
+    int id3;
 }
