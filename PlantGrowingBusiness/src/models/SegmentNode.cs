@@ -14,4 +14,5 @@ abstract class SegmentNode : NodeInterface
     int id2;
 
     int id3;
+    int id4;
 }
