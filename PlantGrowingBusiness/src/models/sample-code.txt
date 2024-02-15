@@ -1,15 +1,13 @@
           && rule.getAlertRouting().getDispatchLabelsList().contains(label.getKey())) {
         summaryLabelSubStrings.add(String.format("%s: %s", label.getKey(), label.getValue()));
       } else if (rule.hasAlertMatching()) {
-        Optional<String> alertMatchingLabelValue =
-            rule.getAlertMatching().getLabelsList().stream()
-                .filter(l -> l.getKey().equals(label.getKey()))
-                .map(NotificationLabel::getValue)
-                .findFirst();
-        if (alertMatchingLabelValue.isPresent()) {
-          summaryLabelSubStrings.add(
-              String.format("%s: [%s]", label.getKey(), alertMatchingLabelValue));
-        }
+        rule.getAlertMatching().getLabelsList().stream()
+            .filter(l -> l.getKey().equals(label.getKey()))
+            .map(NotificationLabel::getValue)
+            .findFirst()
+            .ifPresent(
+                value ->
+                    summaryLabelSubStrings.add(String.format("%s: [%s]", label.getKey(), value)));
       }
     }
     summaryBuilder.append(String.format(" [%s]", String.join(", ", summaryLabelSubStrings)));
