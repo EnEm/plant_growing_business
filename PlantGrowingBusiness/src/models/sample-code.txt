@@ -5,7 +5,7 @@
             .filter(l -> l.getKey().equals(label.getKey()))
             .map(NotificationLabel::getValue)
             .findFirst()
-            .ifPresent(
+            .isPresent(
                 value ->
                     summaryLabelSubStrings.add(String.format("%s: [%s]", label.getKey(), value)));
       }
