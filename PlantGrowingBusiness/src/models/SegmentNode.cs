@@ -10,9 +10,9 @@ abstract class SegmentNode : NodeInterface
 
     int id3;
     int id4;
-    protected string getDescription()
-    {
-        return id.ToString();
-    }
+
+    if {
+        protected string getDescription() { return id.ToString(); }
+}
 
 }
