@@ -3,11 +3,6 @@ using System.Numerics;
 
 abstract class SegmentNode : NodeInterface
 {
-    protected string getDescription()
-    {
-        return id.ToString();
-    }
-
     //  ID for the segment node
     int id;
 
@@ -15,4 +10,9 @@ abstract class SegmentNode : NodeInterface
 
     int id3;
     int id4;
+    protected string getDescription()
+    {
+        return id.ToString();
+    }
+
 }
