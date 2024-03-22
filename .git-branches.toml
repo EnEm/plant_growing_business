@@ -80,7 +80,7 @@ perennial-regex = ""
 # to open browser URLs and talk to the code hosting API.
 # Most people can leave this on "auto-detect".
 # Only change this if your code hosting server uses as custom URL.
-# platform = ""
+platform = "github"
 
 # When using SSH identities, define the hostname
 # of your source code repository. Only change this
